@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Phone {
     String type;
     int mem;
@@ -29,6 +31,24 @@ public class Phone {
 
         System.out.println(phone1.getType() + " " + phone1.getMem());
         System.out.println(phone2.getType() + " " + phone2.getMem());
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("1. telefon típusa: ");
+        phone1.setType(scanner.nextLine());
+        System.out.println("1. telefon memória : ");
+        phone1.setMem(scanner.nextInt());
+        scanner.nextLine();
+
+        scanner = new Scanner(System.in);
+        System.out.println("2. telefon típusa: ");
+        phone2.setType(scanner.nextLine());
+        System.out.println("2. telefon memória : ");
+        phone2.setMem(scanner.nextInt());
+        scanner.nextLine();
+
+        System.out.println(phone1.getType() + " " + phone1.getMem());
+        System.out.println(phone2.getType() + " " + phone2.getMem());
+
     }
 
 }
