@@ -26,8 +26,8 @@ public class Phone {
     }
 
     public static void main(String[] args) {
-        Phone phone1 = new Phone("Pnasonic",20);
-        Phone phone2 = new Phone("Nokia",30);
+        Phone phone1 = new Phone("Pnasonic", 20);
+        Phone phone2 = new Phone("Nokia", 30);
 
         System.out.println(phone1.getType() + " " + phone1.getMem());
         System.out.println(phone2.getType() + " " + phone2.getMem());
