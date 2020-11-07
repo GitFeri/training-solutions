@@ -15,7 +15,7 @@ public class ArrayMain {
             intArray[i] = (int) Math.pow(2, i);
         }
 
-        System.out.println("Kettő hatványai tömb elemei: ");
+        System.out.println("A kettő hatványai tömb elemei: ");
         for (int item : intArray) {
             System.out.println(item);
         }
