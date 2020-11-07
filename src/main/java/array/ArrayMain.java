@@ -1,8 +1,6 @@
 package array;
 
 public class ArrayMain {
-    private static Object Boolean;
-
     public static void main(String[] args) {
         String[] dayOfWeekNames = {"hétfő", "kedd", "szerda", "csütörtök", "péntek", "szombat", "casárnap"};
 
