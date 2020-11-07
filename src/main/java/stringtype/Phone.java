@@ -1,3 +1,5 @@
+package stringtype;
+
 import java.util.Scanner;
 
 public class Phone {
