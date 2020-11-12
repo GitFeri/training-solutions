@@ -24,4 +24,10 @@ public class Phone {
     public void setNumber(String number) {
         this.number = number;
     }
+
+    @Override
+    public String toString() {
+        String phoneNum = "\"" + prefix + "-" + number + "\"";
+        return phoneNum;
+    }
 }
