@@ -1,5 +1,7 @@
 package week03;
 
+import java.util.Scanner;
+
 public class Operation {
     int leftOperand;
     int rightOperand;
@@ -12,5 +14,12 @@ public class Operation {
 
     public int GetResult() {
         return leftOperand + rightOperand;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Kérem adja meg a kifejezést : ");
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+        System.out.println("Eredmény : " + new Operation(input).GetResult());
     }
 }
