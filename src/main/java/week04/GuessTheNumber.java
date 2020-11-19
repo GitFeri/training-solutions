@@ -7,9 +7,13 @@ public class GuessTheNumber {
     private int number;
 
     public GuessTheNumber() {
-        this.number = (int) (Math.random() * (100) + 1);
-//        Random random = new Random();
-//        int number = random.nextInt(100)+1;
+//        number = (int) (Math.random() * (100) + 1);
+        Random random = new Random();
+        number = random.nextInt(100)+1;
+
+
+        System.out.println("Gondolt szám: " + getNumber());
+
     }
 
     public int askNumber() {
@@ -39,7 +43,7 @@ public class GuessTheNumber {
         if (userNum == number) {
             System.out.println("Eltatláltad, erre gondoltam.");
         } else if (count == 0) {
-            System.out.println("Sajnos elfogyott a lehetőséged...");
+            System.out.println("Sajnos elfogyott a lehetőséged..." + getNumber());
         }
     }
 
@@ -50,7 +54,7 @@ public class GuessTheNumber {
     public static void main(String[] args) {
         GuessTheNumber guessTheNumber = new GuessTheNumber();
         //System.out.println("Erre gondoltam: " + guessTheNumber.getNumber());
-        guessTheNumber.asks();
+       // guessTheNumber.asks();
     }
 
 
