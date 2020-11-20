@@ -12,6 +12,8 @@ public class CharOperationsTest {
     public void testCharOperations() {
 
         assertEquals(List.of(0,3), new CharOperations().getPositionOfChar("alma","a"));
+        assertEquals(List.of(0,3,5), new CharOperations().getPositionOfChar("almafa","a"));
+        assertEquals(List.of(1,5,6,9), new CharOperations().getPositionOfChar("macskaalma","a"));
 
     }
 
