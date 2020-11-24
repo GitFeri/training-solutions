@@ -1,4 +1,4 @@
-package stringtype;
+package stringtype.registration;
 
 import java.util.Scanner;
 
