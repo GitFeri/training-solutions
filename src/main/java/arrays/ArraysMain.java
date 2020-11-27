@@ -24,5 +24,4 @@ public class ArraysMain {
     List<String> daysOfWeek() {
         return Arrays.asList("Hétfő", "Kedd", "Szerda", "Csütürtök", "Péntek", "Szombat", "Vasárnap");
     }
-
 }
