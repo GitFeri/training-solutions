@@ -14,17 +14,22 @@ public class User {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+
+        if (email == null) {
+            throw new NullPointerException("Null pointer");
+        }
+
+        if (!isEmailOk(email)) {
+            throw new IllegalStateException("Wrong email");
+        }
     }
 
     private boolean isEmailOk(String email) {
-        if (email == null) {
-            throw new NullPointerException("Null email.");
-        }
         int atPos = email.indexOf('@');
         int dotPos = email.indexOf('.');
 
-        if (atPos < 1 || atPos + 1 > dotPos || dotPos < email.length()) {
-            throw new IllegalStateException("");
+        if (atPos < 1 || atPos + 1 >= dotPos || dotPos + 1 >= email.length()) {
+            return false;
         }
         return true;
     }
