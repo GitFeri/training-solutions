@@ -1,5 +1,9 @@
 package objects;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class ObjectsMain {
 
     public static void main(String[] args) {
@@ -46,6 +50,21 @@ public class ObjectsMain {
         4 opbjektum jött létre. (new)
         Mind a 4-hez hozzá lehet férni: book1, book2, book3, book5
          */
+
+        /**********************************************************************/
+
+        Book[] books = {new Book(), new Book(), new Book()};
+
+        List<Book> bookList = Arrays.asList(new Book(), new Book(), new Book());
+
+        List<Book> bookList1 = new ArrayList<>();
+
+        bookList1.add(new Book());
+        bookList1.add(new Book());
+        bookList1.add(new Book());
+
+        System.out.println(bookList.size());
+        System.out.println(bookList1.size());
 
     }
 }
