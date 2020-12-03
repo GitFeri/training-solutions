@@ -16,8 +16,10 @@ public class BudgetTest {
                 new Item(30,12,"valami")
                 ));
 
-        assertEquals(40,budget.getItemsByMonth(12));
-        assertEquals(20,budget.getItemsByMonth(10));
+        assertEquals(2,budget.getItemsByMonth(12).size());
+        assertEquals(1,budget.getItemsByMonth(10).size());
+        assertEquals("másik",budget.getItemsByMonth(10).get(0).getName());
+        assertEquals("valami",budget.getItemsByMonth(12).get(1).getName());
 
     }
 }

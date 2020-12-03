@@ -10,14 +10,14 @@ public class Budget {
         this.items = items;
     }
 
-    public int getItemsByMonth(int month) {
-        int sum = 0;
+    public List<Item> getItemsByMonth(int month) {
+        List<Item> result = new ArrayList<>();
         for (Item item : items) {
             if (item.getMonth() == month) {
-                sum += item.getPrice();
+                result.add(item);
             }
         }
-        return sum;
+        return result;
     }
 }
 
