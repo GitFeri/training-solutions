@@ -22,4 +22,13 @@ public class DigitSum {
         return sum;
     }
 
+    public static int sumOfDigitsMath(int x) {
+        int sum = 0;
+        int num = x;
+        while (num != 0) {
+            sum += num % 10;
+            num /= 10;
+        }
+        return sum;
+    }
 }
