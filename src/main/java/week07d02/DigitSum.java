@@ -5,7 +5,7 @@ public class DigitSum {
         String xString = "" + x;
         int sum = 0;
         for (int i = 0; i < xString.length(); i++) {
-            sum += xString.codePointAt(i)-48;
+            sum += xString.codePointAt(i) - 48;
         }
         return sum;
     }
