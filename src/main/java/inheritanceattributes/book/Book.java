@@ -1,6 +1,7 @@
 package inheritanceattributes.book;
 
 public class Book {
+
     private String title;
     protected int price;
 

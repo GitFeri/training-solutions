@@ -3,6 +3,7 @@ package inheritanceattributes.order;
 import inheritanceattributes.book.Book;
 
 public class ShippedBook extends Book {
+
   int shippingCost;
 
     public ShippedBook(String title, int price, int shippingCost) {
