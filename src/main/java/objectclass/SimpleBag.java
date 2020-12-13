@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class SimpleBag {
+
     private int cursor;
     private List<Object> items = new ArrayList<>();
 

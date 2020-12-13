@@ -1,6 +1,7 @@
 package objectclass;
 
 public class Beer {
+
     private final String name;
     private final int price;
 
