@@ -1,15 +1,18 @@
 package week08d01;
 
+import java.util.Locale;
+import java.util.Objects;
+
 public class Robot {
     Position position;
 
     public Robot() {
-        position = new Position(0,0);
+        position = new Position(0, 0);
     }
 
     public Position move(String string) {
         for (int i = 0; i < string.length(); i++) {
-            if (!oneMove(string.charAt(i))) {
+            if (!oneMove(string.toUpperCase().charAt(i))) {
                 throw new IllegalArgumentException("Not FLBJ");
             }
         }
@@ -35,5 +38,4 @@ public class Robot {
         }
         return false;
     }
-
 }
