@@ -6,12 +6,12 @@ import java.util.Random;
 
 public class Lottery {
     public List<Integer> getNumbers(int interval, int numbers) {
-        List<Integer> intervalNums = new ArrayList<>();
+        List<Integer> intervalNums = new ArrayList<>(interval);
         for (int i = 0; i < interval; i++) {
             intervalNums.add(i);
         }
 
-        List<Integer> result = new ArrayList<>();
+        List<Integer> result = new ArrayList<>(numbers);
         int pos;
         Random rand = new Random();
         for (int i = 0; i < numbers; i++) {
