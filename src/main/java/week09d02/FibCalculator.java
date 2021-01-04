@@ -9,10 +9,10 @@ public class FibCalculator {
     public long sumEvens(int bound) {
         long sum = 0;
         while (fibNum <= bound) {
-            setNextFibNumber();
             if (fibNum % 2 == 0) {
                 sum += fibNum;
             }
+            setNextFibNumber();
         }
         return sum;
     }
