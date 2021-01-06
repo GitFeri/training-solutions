@@ -44,7 +44,7 @@ public class Cv {
                 return skill.getLevel();
             }
         }
-        throw new IllegalArgumentException("");
+        throw new SkillNotFoundException("");
     }
 }
 
