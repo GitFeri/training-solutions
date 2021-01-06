@@ -30,7 +30,6 @@ public class Cv {
         }
     }
 
-
     public String getName() {
         return name;
     }
@@ -45,17 +44,7 @@ public class Cv {
                 return skill.getLevel();
             }
         }
-
-
-        //            try {
-//                throw new SkillNotFoundException("");
-//            } catch (SkillNotFoundException e) {
-//                e.printStackTrace();
-//            }
-
         throw new IllegalArgumentException("");
-
-
     }
 }
 
