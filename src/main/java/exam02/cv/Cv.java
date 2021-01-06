@@ -19,15 +19,14 @@ public class Cv {
 
     public void addSkills(String... skills) {
         int pos;
-        String levelStr;
+        int level;
         String name;
 
         for (String skill : skills) {
             pos = skill.indexOf('(');
             name = skill.substring(0, pos - 1);
-            levelStr = skill.substring(pos, skill.length());
-            // ????
-            this.skills.add(new Skill(name, 0));
+            level = Integer.parseInt(skill.substring(pos + 1, skill.length() - 1));
+            this.skills.add(new Skill(name, level));
         }
     }
 
@@ -41,19 +40,22 @@ public class Cv {
     }
 
     public int findSkillLevelByName(String name) {
-        if (!name.equals("")) {
-            //            try {
+        for (Skill skill : skills) {
+            if (skill.getName().equals(name)) {
+                return skill.getLevel();
+            }
+        }
+
+
+        //            try {
 //                throw new SkillNotFoundException("");
 //            } catch (SkillNotFoundException e) {
 //                e.printStackTrace();
 //            }
 
-            throw new IllegalArgumentException("");
+        throw new IllegalArgumentException("");
 
 
-        }
-        {
-            return 0;
-        }
     }
 }
+
