@@ -8,21 +8,29 @@ public class Courier {
     private List<Ride> rides = new ArrayList<>();
 
     public void addRide(Ride ride) {
-        if (rides.size() == 0 || valid(ride)) {
-            rides.add(ride);
-            return;
+        if (rides.isEmpty()) {
+            if (ride.getNumOfRide() == 1) {
+                rides.add(ride);
+                return;
+            }
+        } else {
+            if (valid(ride)) {
+                rides.add(ride);
+                return;
+            }
         }
+
         throw new IllegalArgumentException("Invalid input!");
     }
 
     public int getNonWorkDay() {
-        if (rides.get(0).getDay() > 1) {
+        if (rides.get(0).getDayOfRide() > 1) {
             return 1;
         }
 
         for (int i = 1; i < rides.size(); i++) {
-            if ((rides.get(i).getDay() - rides.get(i - 1).getDay()) > 1) {
-                return rides.get(i - 1).getDay() + 1;
+            if ((rides.get(i).getDayOfRide() - rides.get(i - 1).getDayOfRide()) > 1) {
+                return rides.get(i - 1).getDayOfRide() + 1;
             }
         }
 
@@ -31,11 +39,11 @@ public class Courier {
 
     private boolean valid(Ride ride) {
         Ride lastRide = rides.get(rides.size() - 1);
-        if (lastRide.getDay() < ride.getDay() && ride.getNr() == 1) {
+        if (lastRide.getDayOfRide() < ride.getDayOfRide() && ride.getNumOfRide() == 1) {
             return true;
         }
 
-        if (lastRide.getDay() == ride.getDay() && lastRide.getNr() + 1 == ride.getNr()) {
+        if (lastRide.getDayOfRide() == ride.getDayOfRide() && lastRide.getNumOfRide() + 1 == ride.getNumOfRide()) {
             return true;
         }
 

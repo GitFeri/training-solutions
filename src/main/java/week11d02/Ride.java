@@ -2,22 +2,22 @@ package week11d02;
 
 public class Ride {
 
-    private int day;
-    private int nr;
+    private int dayOfRide;
+    private int numOfRide;
     private int distance;
 
     public Ride(int day, int nr, int distance) {
-        this.day = day;
-        this.nr = nr;
+        this.dayOfRide = day;
+        this.numOfRide = nr;
         this.distance = distance;
     }
 
-    public int getDay() {
-        return day;
+    public int getDayOfRide() {
+        return dayOfRide;
     }
 
-    public int getNr() {
-        return nr;
+    public int getNumOfRide() {
+        return numOfRide;
     }
 
     public int getDistance() {
