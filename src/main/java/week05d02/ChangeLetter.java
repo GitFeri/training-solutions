@@ -8,7 +8,7 @@ public class ChangeLetter {
         char[] chars = new char[s.length()];
 
         for (int i = 0; i < s.length(); i++) {
-            if ("euioaEUIOA".contains(s.substring(i,i+1))) {
+            if ("euioaEUIOA".contains(s.substring(i, i + 1))) {
                 chars[i] = '*';
             } else
                 chars[i] = s.charAt(i);
