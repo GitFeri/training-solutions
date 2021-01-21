@@ -1,4 +1,4 @@
-package week04;
+package week04d03;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -53,8 +53,8 @@ public class GuessTheNumber {
 
     public static void main(String[] args) {
         GuessTheNumber guessTheNumber = new GuessTheNumber();
-        //System.out.println("Erre gondoltam: " + guessTheNumber.getNumber());
-       // guessTheNumber.asks();
+        System.out.println("Erre gondoltam: " + guessTheNumber.getNumber());
+        guessTheNumber.asks();
     }
 
 
