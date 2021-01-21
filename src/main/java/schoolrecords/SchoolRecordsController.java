@@ -1,4 +1,4 @@
-package records;
+package schoolrecords;
 
 import java.util.*;
 import java.util.List;
