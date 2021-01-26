@@ -20,13 +20,23 @@ class AirportTest {
         assertEquals("Departure", airport.wichIsMore());
     }
 
+    @Test
+    public void searchFlyAtRegNumberTest() {
+        airport.readFiles();
+        assertEquals("Dublin", airport.searchFlyAtRegNumber("FC5354").getCity());
+        assertThrows(IllegalArgumentException.class, () -> airport.searchFlyAtRegNumber("AB1234"));
+    }
 
-//System.out.println(airport.flies);
-    //System.out.println(airport.wichIsMore());
-    //System.out.println(airport.searchFlyAtRegNumber("HM0332"));
-    //System.out.println(airport.searchFlyAtRegNumber("AB1234"));
-    //System.out.println(airport.searchFliesFromToCity("Budapest", "Arrival"));
-    //System.out.println(airport.searchEarliestFly());
+    @Test
+    public void searchFliesFromToCityTest() {
+        airport.readFiles();
+        assertEquals(3, airport.searchFliesFromToCity("Budapest", "Arrival").size());
+    }
 
+    @Test
+    public void searchEarliestFlyTest() {
+        airport.readFiles();
+        assertEquals("FG3210", airport.searchEarliestFly().getRegNumber());
+    }
 
 }

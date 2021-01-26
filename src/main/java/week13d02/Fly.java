@@ -3,14 +3,14 @@ import java.time.LocalTime;
 public class Fly {
 
     private String regNumber;
-    private String startsEnd;
-    private String City;
+    private String type;
+    private String city;
     private LocalTime time;
 
     public Fly(String regNumber, String startsEnd, String city, LocalTime time) {
         this.regNumber = regNumber;
-        this.startsEnd = startsEnd;
-        City = city;
+        this.type = startsEnd;
+        this.city = city;
         this.time = time;
     }
 
@@ -18,12 +18,12 @@ public class Fly {
         return regNumber;
     }
 
-    public String getStartsEnd() {
-        return startsEnd;
+    public String getType() {
+        return type;
     }
 
     public String getCity() {
-        return City;
+        return city;
     }
 
     public LocalTime getTime() {
@@ -34,8 +34,8 @@ public class Fly {
     public String toString() {
         return "Fly{" +
                 "regNumber='" + regNumber + '\'' +
-                ", startsEnd='" + startsEnd + '\'' +
-                ", City='" + City + '\'' +
+                ", startsEnd='" + type + '\'' +
+                ", City='" + city + '\'' +
                 ", time=" + time +
                 '}';
     }

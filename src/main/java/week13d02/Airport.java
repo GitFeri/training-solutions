@@ -10,17 +10,6 @@ import java.util.List;
 public class Airport {
     private List<Fly> flies = new ArrayList<>();
 
-    public static void main(String[] args) {
-        Airport airport = new Airport();
-        airport.readFiles();
-        //System.out.println(airport.flies);
-        //System.out.println(airport.wichIsMore());
-        //System.out.println(airport.searchFlyAtRegNumber("HM0332"));
-        //System.out.println(airport.searchFlyAtRegNumber("AB1234"));
-        //System.out.println(airport.searchFliesFromToCity("Budapest", "Arrival"));
-        //System.out.println(airport.searchEarliestFly());
-    }
-
     public List<Fly> getFlies() {
         return new ArrayList<>(flies);
     }
@@ -48,7 +37,7 @@ public class Airport {
         int arrivals = 0;
         int departures = 0;
         for (Fly fly : flies) {
-            if (fly.getStartsEnd().equals("Arrival")) {
+            if (fly.getType().equals("Arrival")) {
                 arrivals++;
             } else {
                 departures++;
@@ -63,13 +52,13 @@ public class Airport {
                 return fly;
             }
         }
-        throw new IllegalStateException("Fly not found.");
+        throw new IllegalArgumentException("Fly not found.");
     }
 
-    public List<Fly> searchFliesFromToCity(String city, String startEnd) {
+    public List<Fly> searchFliesFromToCity(String city, String type) {
         List<Fly> result = new ArrayList<>();
         for (Fly fly : flies) {
-            if (fly.getCity().equals(city) && fly.getStartsEnd().equals(startEnd)) {
+            if (fly.getCity().equals(city) && fly.getType().equals(type)) {
                 result.add(fly);
             }
         }
@@ -80,7 +69,7 @@ public class Airport {
         Fly earliestFly = firstArrival();
 
         for (Fly fly : flies) {
-            if (fly.getStartsEnd().equals("Arrival") && fly.getTime().isBefore(earliestFly.getTime())) {
+            if (fly.getType().equals("Departure") && fly.getTime().isBefore(earliestFly.getTime())) {
                 earliestFly = fly;
             }
 
@@ -90,11 +79,11 @@ public class Airport {
 
     private Fly firstArrival() {
         for (Fly fly : flies) {
-            if (fly.getStartsEnd().equals("Arrival")) {
+            if (fly.getType().equals("Departure")) {
                 return fly;
             }
         }
-        throw new IllegalStateException("No Arrival");
+        throw new IllegalStateException("No Departure");
     }
 }
 
