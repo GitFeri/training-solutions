@@ -17,7 +17,7 @@ class AirportTest {
     @Test
     public void wichIsMoreTest() {
         airport.readFiles();
-        assertEquals("Departures", airport.wichIsMore());
+        assertEquals("Departure", airport.wichIsMore());
     }
 
 

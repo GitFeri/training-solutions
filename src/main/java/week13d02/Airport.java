@@ -54,7 +54,7 @@ public class Airport {
                 departures++;
             }
         }
-        return arrivals > departures ? "Arrivals" : "Departures";
+        return arrivals > departures ? "Arrival" : "Departure";
     }
 
     public Fly searchFlyAtRegNumber(String regNumber) {
