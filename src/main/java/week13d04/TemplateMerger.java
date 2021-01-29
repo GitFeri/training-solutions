@@ -10,7 +10,7 @@ public class TemplateMerger {
     private static final String NAME_PH = "{nev}";
     private static final String YEAR_PH = "{ev}";
 
-    StringBuilder strBuilder = new StringBuilder();
+    private StringBuilder strBuilder = new StringBuilder();
 
     public String merge(Path file, List<Employee> employees) {
         String empleesSample = readSampleFromFile(file);
