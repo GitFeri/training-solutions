@@ -43,17 +43,19 @@ public class BasketList {
 
     private void makeProductList() {
         for (String name : orderList.keySet()) {
-            for (String product : orderList.get(name)){
-             if (productList.containsKey(product)){
-                 int value = productList.get(product).intValue();
-               value++;
-               productList.replace(product,value);
-             } else {
-               productList.put(product,1);
+            buildProductList(name);
+        }
+    }
 
-             }
+    private void buildProductList(String name) {
+        for (String product : orderList.get(name)) {
+            if (productList.containsKey(product)) {
+                int value = productList.get(product).intValue();
+                value++;
+                productList.replace(product, value);
+            } else {
+                productList.put(product, 1);
             }
-
         }
     }
 
@@ -61,7 +63,7 @@ public class BasketList {
         return productList.get(name).intValue();
     }
 
-    public int numOfProductByName(String name){
+    public int numOfProductByName(String name) {
         return orderList.get(name).size();
     }
 
