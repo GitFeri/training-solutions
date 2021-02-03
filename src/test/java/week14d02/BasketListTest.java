@@ -14,10 +14,10 @@ class BasketListTest {
         bl.readFile(Path.of("list.txt"));
 //        System.out.println(bl.orderFinder("A233"));
 //        System.out.println(bl.getOrderList());
-        //bl.makeProductList();
-        //    bl.makeProductList();
+//        bl.makeProductList();
+//        bl.makeProductList();
 //        System.out.println(bl.productFinder("rosmary"));
-        //      System.out.println(bl.numOfProductByName("A233"));
+//        System.out.println(bl.numOfProductByName("A233"));
         System.out.println(bl.getProductList());
 
     }
