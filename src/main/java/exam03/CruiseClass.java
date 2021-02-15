@@ -1,11 +1,16 @@
 package exam03;
 
 public enum CruiseClass {
-    LUXURY(300_000), FIRST(180_000), SECOND(100_000);
+    LUXURY(3.0), FIRST(1.8), SECOND(1.0);
 
-    int cost;
+    private static final int cost = 100_000;
+    double multiplier;
 
-    CruiseClass(int cost) {
-        this.cost = cost;
+        CruiseClass(double multiplier) {
+        this.multiplier = multiplier;
+    }
+
+    public double cost(){
+            return multiplier * cost;
     }
 }

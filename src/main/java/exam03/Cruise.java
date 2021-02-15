@@ -43,7 +43,7 @@ public class Cruise {
     }
 
     public double getPriceForPassenger(Passenger passenger) {
-        return passenger.getCruiseClass().cost;
+        return passenger.getCruiseClass().cost();
     }
 
     public Passenger findPassengerByName(String name) {
