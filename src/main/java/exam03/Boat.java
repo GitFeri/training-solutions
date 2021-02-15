@@ -17,6 +17,5 @@ public class Boat {
         this.name = name;
         this.maxPassengers = maxPassengers;
 
-
     }
 }

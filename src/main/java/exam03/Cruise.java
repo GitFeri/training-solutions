@@ -2,7 +2,6 @@ package exam03;
 
 import java.time.LocalDate;
 import java.util.*;
-import java.util.concurrent.Callable;
 
 public class Cruise {
     private Boat boat;
@@ -43,7 +42,8 @@ public class Cruise {
     }
 
     public double getPriceForPassenger(Passenger passenger) {
-        return passenger.getCruiseClass().cost();
+        return passenger.getCruiseClass().multiplier
+                * getBasicPrice();
     }
 
     public Passenger findPassengerByName(String name) {
@@ -65,8 +65,11 @@ public class Cruise {
     }
 
     public double sumAllBookingsCharged() {
-        Map<CruiseClass, Integer> result = countPassengerByClass();
-        return 0.0;
+        double result = 0.0;
+        for (CruiseClass cruiseClass : countPassengerByClass().keySet()) {
+            result += cruiseClass.multiplier * getBasicPrice();
+        }
+        return result;
     }
 
     public Map<CruiseClass, Integer> countPassengerByClass() {
@@ -74,7 +77,7 @@ public class Cruise {
 
         for (Passenger passenger : passengers) {
             if (result.containsKey(passenger.getCruiseClass())) {
-                int value = result.get(passenger.getCruiseClass()).intValue();
+                int value = result.get(passenger.getCruiseClass());
                 value++;
                 result.replace((passenger.getCruiseClass()), value);
             } else {
@@ -82,7 +85,6 @@ public class Cruise {
             }
         }
         return result;
-
     }
 }
 
