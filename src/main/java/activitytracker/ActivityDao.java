@@ -38,6 +38,40 @@ public class ActivityDao {
         }
     }
 
+    private void insertActivityTrackPoints(List<TrackPoint> trackPoints, long activity) {
+        try (Connection conn = dataSource.getConnection()) {
+            conn.setAutoCommit(false);
+
+            try (PreparedStatement stmt = conn.prepareStatement("insert inti track_points(act_time,lat,lon,activityId) values (?,?,?,?)")) {
+                for (TrackPoint trackPoint : trackPoints) {
+                    if (!isValidLatLon(trackPoint.getLat(), trackPoint.getLon())) {
+                        throw new IllegalArgumentException("Invalid lat or lon");
+                    }
+                    stmt.setDate(1,Date.valueOf(trackPoint.getTime()));
+                    stmt.setDouble(2,trackPoint.getLat());
+                    stmt.setDouble(2,trackPoint.getLon());
+
+                }
+            } catch (IllegalArgumentException iae) {
+                conn.rollback();
+            }
+
+        } catch (SQLException sqlException) {
+            throw new IllegalStateException("Cannot connect", sqlException);
+        }
+    }
+
+    private boolean isValidLatLon(double lat, double lon) {
+        if (lat > 90 || lat < -90) {
+            return false;
+        }
+        if (lon > 180 || lon < -180) {
+            return false;
+        }
+        return true;
+
+    }
+
     public List<Activity> selectActivitiesBeforeDate(LocalDate date) {
         List<Activity> result = new ArrayList<>();
 
